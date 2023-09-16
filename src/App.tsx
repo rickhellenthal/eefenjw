@@ -1,26 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const App = () => {
+    return (
+        <div className="h-screen flex justify-center items-center my-custom-bg-class">
+            <div className="w-1/3 h-20 rounded flex justify-center items-center">
+                <h1 className="text-6xl text-slate-50 select-none">Bruiloft Eef & JW</h1>
+            </div>
+        </div>
+    );
+};
 
 export default App;
