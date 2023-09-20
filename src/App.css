@@ -17,6 +17,11 @@ body {
 .eefenjwfont {
     font-family: "Rumini Namamu", sans-serif;
 }
+.ankeveen-bg {
+    background-image: url(/src/assets/ankeveen.jpg);
+    background-size: cover;
+    background-position: center;
+}
 
 .App {
     text-align: center;
