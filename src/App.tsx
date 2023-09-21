@@ -6,9 +6,8 @@ import sample from "./assets/background1080.mp4";
 import { differenceInDays } from "date-fns";
 import { useEffect, useState } from "react";
 
-// TODO: Merge other laptop branch
 export const App = () => {
-    const [canPlay, setCanPlay] = useState(undefined);
+    const [canPlay, setCanPlay] = useState(true);
 
     const setViewHeight = () => {
         let vh = window.innerHeight * 0.01;
@@ -16,15 +15,24 @@ export const App = () => {
     };
 
     const checkIfBackgroundVideoIsPlaying = () => {
-        setTimeout(() => {
-            var vid = document.getElementById("background-video-id");
-            if (vid) {
-                //@ts-ignore
-                console.log(vid.paused);
-                //@ts-ignore
-                setCanPlay(!vid.paused);
-            }
-        }, 750);
+        if (window.innerWidth > 800) {
+            return;
+        }
+
+        var videoElement = document.getElementById("background-video-id");
+        if (videoElement) {
+            setTimeout(() => {
+                var videoElement = document.getElementById("background-video-id");
+                if (videoElement) {
+                    //@ts-ignore
+                    var currentTime: number = videoElement.currentTime;
+
+                    if (currentTime === 0) {
+                        setCanPlay(false);
+                    }
+                }
+            }, 2500);
+        }
     };
 
     useEffect(() => {
@@ -39,8 +47,10 @@ export const App = () => {
     const result = differenceInDays(new Date(2024, 3, 19), new Date());
     return (
         <>
-            <div className={`page flex justify-center items-center relative bg-black ${canPlay ? "" : "ankeveen-bg"}`}>
-                {canPlay !== false && (
+            <div
+                id="video-container"
+                className={`page flex justify-center items-center relative bg-black ${canPlay ? "" : "ankeveen-bg"}`}>
+                {canPlay && (
                     <video
                         id="background-video-id"
                         className="absolute h-full w-full object-cover overflow-hidden object-top"
@@ -57,7 +67,7 @@ export const App = () => {
                     <h1 className="text-6xl text-slate-50 select-none font-rumini w-3/5 md:w-full">
                         Bruiloft Eef & JW
                     </h1>
-                    <h2 className="text-3xl text-slate-50 select-none mt-2 w-3/5  whitespace-nowrap md:w-auto font-saroja ">
+                    <h2 className="text-3xl text-slate-50 select-none mt-2 w-3/5  whitespace-nowrap md:w-auto font-nevermind ">
                         nog <CountUp start={500} end={result} duration={3} /> nachtjes
                     </h2>
                 </div>
