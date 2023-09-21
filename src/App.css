@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.cdnfonts.com/css/rumini-namamu");
+@import url("https://fonts.cdnfonts.com/css/the-saroja");
 
 body {
     background-color: #fee7d9;
     min-height: -webkit-fill-available;
+    overflow: hidden;
 }
 
 .page {
@@ -14,8 +16,12 @@ body {
     min-height: -webkit-fill-available;
 }
 
-.eefenjwfont {
+.font-rumini {
     font-family: "Rumini Namamu", sans-serif;
+}
+
+.font-saroja {
+    font-family: "The Saroja", sans-serif;
 }
 
 .App {

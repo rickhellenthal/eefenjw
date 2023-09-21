@@ -34,10 +34,12 @@ export const App = () => {
                     <source src={sample} type="video/mp4" />
                 </video>
 
-                <div className="h-20 rounded flex justify-center items-center z-20 w-3/6 md:w-full flex-col">
-                    <h1 className="text-6xl text-slate-50 select-none eefenjwfont">Bruiloft Eef & JW</h1>
-                    <h2 className="text-3xl text-slate-50 select-none mt-2 italic w-full md:w-auto whitespace-nowrap">
-                        nog <CountUp start={500} end={result} duration={3} /> dagen
+                <div className="h-20 rounded flex justify-center items-center z-20 flex-col">
+                    <h1 className="text-6xl text-slate-50 select-none font-rumini w-3/5 md:w-full">
+                        Bruiloft Eef & JW
+                    </h1>
+                    <h2 className="text-3xl text-slate-50 select-none mt-2 w-3/5  whitespace-nowrap md:w-auto font-saroja ">
+                        nog <CountUp start={500} end={result} duration={3} /> nachtjes
                     </h2>
                 </div>
             </div>
